@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c23f5218-228a-4197-b9cb-2ba060bd2b60" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\DEV\Apache\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="D:\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="userSettingsFile" value="D:\DEV\Apache\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1llXIiRESy2jaONtmGoEYXFACSS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\guoxing\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c23f5218-228a-4197-b9cb-2ba060bd2b60" name="Default Changelist" comment="" />
+      <created>1608172573463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608172573463</updated>
+      <workItem from="1608172574587" duration="7000" />
+    </task>
+    <servers />
+  </component>
+</project>

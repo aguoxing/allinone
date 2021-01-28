@@ -1,0 +1,135 @@
+# 项目相关配置
+allinone:
+  # 名称
+  name: ALLINONE
+  # 版本
+  version: 0.0.1
+  # 版权年份
+  copyrightYear: 2021
+  # 实例演示开关
+  demoEnabled: true
+  # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
+  profile: /data/ALLINONE/uploadPath
+  # 获取ip地址开关
+  addressEnabled: true
+  # 验证码类型 math 数组计算 char 字符验证
+  captchaType: math
+
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8080
+  port: 8086
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  # undertow 配置
+  undertow:
+    # HTTP post内容的最大大小。当值为-1时，默认值为大小是无限的
+    max-http-post-size: -1
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分
+    buffer-size: 512
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+    # 是否分配的直接内存
+    direct-buffers: true
+    threads:
+      io: 8
+      worker: 256
+#  # tomcat 配置
+#  tomcat:
+#    # tomcat的URI编码
+#    uri-encoding: UTF-8
+#    # tomcat最大线程数，默认为200
+#    max-threads: 500
+#    # Tomcat启动初始化的线程数，默认值25
+#    min-spare-threads: 30
+
+
+# Spring配置
+spring:
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
+  profiles:
+    active: dev
+#    active: @profiles.active@
+  # 文件上传
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 10MB
+      # 设置总上传的文件大小
+      max-request-size: 20MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  # MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，请将其路径配置到 configLocation 中。
+  # config-location: classpath:mybatis-config.xml
+  # MyBatis Mapper 所对应的 XML 文件位置，如果您在 Mapper 中有自定义方法
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  # MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名 实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: top.cloudos.**.model.entity
+  #  # 配置扫描通用枚举 # 支持统配符 * 或者 ; 分割
+  #  type-enums-package: com.abbottliu.sys.enums,com.abbottliu.enums
+  # 启动时是否检查 MyBatis XML 文件的存在，默认不检查
+  check-config-location: false
+  #  ExecutorType.SIMPLE：该执行器类型不做特殊的事情，为每个语句的执行创建一个新的预处理语句（PreparedStatement）
+  #  ExecutorType.REUSE：该执行器类型会复用预处理语句（PreparedStatement）
+  #  ExecutorType.BATCH：该执行器类型会批量执行所有的更新语句
+  executor-type: simple
+  configuration:
+    # 是否开启自动驼峰命名规则（camel case）映射
+    map-underscore-to-camel-case: true
+    # 配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: null
+  global-config:
+    db-config:
+      # 数据库类型,默认值为未知的数据库类型
+      # db-type: mysql
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: true
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+# Swagger配置
+swagger:
+  # 是否开启swagger
+  enabled: true
+  # 请求前缀
+  pathMapping: /dev-api
+
+# 防止XSS攻击
+xss:
+  # 过滤开关
+  enabled: true
+  # 排除链接（多个用逗号分隔）
+  excludes: /system/notice/*
+  # 匹配链接
+  urlPatterns: /system/*,/monitor/*,/tool/*
+
+# token配置
+token:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌密钥
+  secret: abcdefghijklmnopqrstuvwxyz
+  # 令牌有效期（默认30分钟）
+  expireTime: 30
+
+#jwt 配置
+jwt:
+  tokenHeader: Authorization
+  tokenHead: Bearer
+  secret: cloudos
+  expiration: 86400

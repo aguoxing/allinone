@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.cloudos.article.mapper.ArticleTagMapper">
+
+    <resultMap id="ArticleTagResult" type="ArticleTag">
+        <result column="tag_id" property="tagId"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <select id="listByArticleId" parameterType="java.lang.String" resultMap="ArticleTagResult">
+        SELECT
+            a.tag_id,
+            a.`name`
+        FROM
+            article_tag a
+                LEFT JOIN article_info_tag b ON a.tag_id = b.tag_id
+        WHERE
+            b.article_id = #{articleId}
+    </select>
+
+</mapper>

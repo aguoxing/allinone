@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>allinone</artifactId>
+        <groupId>top.cloudos</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>top.cloudos.generator</groupId>
+    <artifactId>allinone-generator</artifactId>
+
+    <dependencies>
+
+        <!--velocity代码生成使用模板 -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cloudos.quartz</groupId>
+            <artifactId>allinone-quartz</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

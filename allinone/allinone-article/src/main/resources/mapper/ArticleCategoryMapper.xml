@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.cloudos.article.mapper.ArticleCategoryMapper">
+
+    <resultMap id="ArticleCategoryResult" type="ArticleCategory">
+        <result column="category_id" property="categoryId"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <select id="getCategoryArticleCount" resultType="top.cloudos.article.model.vo.CategoryVO">
+        SELECT
+            c.category_id,
+            c.name AS category_name,
+            COUNT( 1 ) AS article_count
+        FROM
+            article_category c
+                LEFT JOIN article_info a ON c.category_id = a.category_id
+        GROUP BY
+            c.category_id
+    </select>
+
+    <select id="selectByArticleId" parameterType="java.lang.String" resultMap="ArticleCategoryResult">
+        SELECT
+            a.category_id,
+            a.`name`
+        FROM
+            article_category a
+                LEFT JOIN article_info b ON a.category_id = b.category_id
+        WHERE
+            b.article_id = #{articleId}
+    </select>
+
+</mapper>
